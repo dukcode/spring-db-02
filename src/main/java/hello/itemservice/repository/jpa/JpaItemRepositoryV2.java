@@ -1,6 +1,7 @@
 package hello.itemservice.repository.jpa;
 
 import hello.itemservice.domain.Item;
+import hello.itemservice.domain.QItem;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
@@ -13,6 +14,8 @@ import org.springframework.util.StringUtils;
 public class JpaItemRepositoryV2 implements ItemRepository {
 
     private final SpringDataJpaItemRepository repository;
+
+    private final static QItem item = new QItem("i");
 
     @Override
     public Item save(Item item) {
